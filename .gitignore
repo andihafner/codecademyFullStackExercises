@@ -1,1 +1,6 @@
-# ahc .gitignore
+# ahc .gitignore defs
+
+## https://linuxize.com/post/gitignore-ignoring-files-in-git/
+
+#  swap files
+*.sw*
