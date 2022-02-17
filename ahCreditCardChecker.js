@@ -45,7 +45,7 @@ const validateCred = cardNumber => {
         cardNumber.unshift(0)
         cardNumberZeroAdded = true;
     };
-    
+
     // Reverse card number for easier for loop handling
     cardNumber.reverse();
 
@@ -66,13 +66,17 @@ const validateCred = cardNumber => {
         b = getSecondNumber(b);
         checkSum += (a + b);
     }
-    
+
     // Remove added zero digit if necessary, undo card number reverse
-    if (cardNumberZeroAdded === true) {cardNumber.pop()};
+    if (cardNumberZeroAdded === true) {
+        cardNumber.pop()
+    };
     cardNumber.reverse();
 
     // Return if card number is valid or not
-    if (checkSum % 10 === 0) { return true };
+    if (checkSum % 10 === 0) {
+        return true
+    };
     return false;
 };
 
@@ -87,4 +91,38 @@ const findInvalidCards = allCards => {
 };
 
 // log array of invalid cards
- console.log(findInvalidCards(batch));
+// console.log(findInvalidCards(batch));
+
+const idInvalidCardCompanies = invalidCards => {
+    //console.log('function called...');
+    const invalidCompanies = [];
+    invalidCards.forEach(cardNumber => {
+        let company = 'Company not found';
+
+        switch (cardNumber[0]) {
+            case 3:
+                company = 'Amex (American Express)';
+                break;
+            case 4:
+                company = 'Visa';
+                break;
+            case 5:
+                company = 'Mastercard';
+                break;
+            case 6:
+                company = 'Discover';
+                break;
+        }
+        // Avoid double entries...
+        if (!(invalidCompanies.some(entry => entry === company))) {
+            invalidCompanies.push(company);
+        }
+    })
+    return invalidCompanies;
+};
+
+// List companies which deployed invalid cards
+console.log(idInvalidCardCompanies(findInvalidCards(batch)));
+
+// Exercise done, although there remain some additional challenges...
+// Perhaps another day, I'd like to go on with the course material...
