@@ -1,13 +1,9 @@
-<<<<<<< HEAD
 /* ahCreditCardChecker.js, codecademy.com full-stack engineer career path exercise,
     andihafner.com 2022
     
     This code checks credit card numbers for their validity, based on the 
         --> https://en.wikipedia.org/wiki/Luhn_algorithm
     */
-=======
-/* ahCreditCardChecker.js, codecademy.com full-stack engineer career path exercise, ahc 2022 */
->>>>>>> 0de74b0b84f59fadfacebe947738ea6d1da76c19
 
 // All valid credit card numbers
 const valid1 = [4, 5, 3, 9, 6, 7, 7, 9, 0, 8, 0, 1, 6, 8, 0, 8];
@@ -37,19 +33,20 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 // Add your functions below:
 
 /* The function 'validateCred()' implements the Luhn-Algorithm
-<<<<<<< HEAD
-=======
     --> https://en.wikipedia.org/wiki/Luhn_algorithm
->>>>>>> 0de74b0b84f59fadfacebe947738ea6d1da76c19
     It takes a card number an returns 'true' if it is a valid one.
     I developed the function from the German Wikipedia Description, which I found easier
     to understand, --> https://de.wikipedia.org/wiki/Luhn-Algorithmus
 */
 const validateCred = cardNumber => {
+    let cardNumberZeroAdded = false;
     // If 'cardNumber' has an odd count of numbers, add a 0 in front of the Array
     if (cardNumber.length % 2) {
         cardNumber.unshift(0)
+        cardNumberZeroAdded = true;
     };
+    
+    // Reverse card number for easier for loop handling
     cardNumber.reverse();
 
     // If the second number multiplied by two is greater than 9, subtract 9 from the result
@@ -61,6 +58,7 @@ const validateCred = cardNumber => {
         return numberByTwo;
     };
 
+    // Calculate checksum
     let checkSum = 0;
     for (i = 0; i < (cardNumber.length / 2); i++) {
         let a = cardNumber[i * 2]
@@ -68,19 +66,25 @@ const validateCred = cardNumber => {
         b = getSecondNumber(b);
         checkSum += (a + b);
     }
+    
+    // Remove added zero digit if necessary, undo card number reverse
+    if (cardNumberZeroAdded === true) {cardNumber.pop()};
+    cardNumber.reverse();
 
+    // Return if card number is valid or not
     if (checkSum % 10 === 0) { return true };
     return false;
 };
 
-//console.log(validateCred(valid1));
+//console.log(validateCred(valid1)); // Should return true
 
-<<<<<<< HEAD
- console.log(batch);
-=======
-// console.log(batch);
->>>>>>> 0de74b0b84f59fadfacebe947738ea6d1da76c19
+// log numbered list of true or false values of all card numbers
+// batch.forEach((cardNumber, index) => console.log(index, validateCred(cardNumber)));
 
-batch.forEach((arr, index) => {
-    console.log(index, validateCred(arr));
-});
+const findInvalidCards = allCards => {
+    const invalidCards = allCards.filter(cardNumber => validateCred(cardNumber) === false);
+    return invalidCards;
+};
+
+// log array of invalid cards
+ console.log(findInvalidCards(batch));
