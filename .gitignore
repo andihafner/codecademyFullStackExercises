@@ -2,5 +2,8 @@
 
 ## https://linuxize.com/post/gitignore-ignoring-files-in-git/
 
+
+00_locally/
+
 #  swap files
 *.sw*
