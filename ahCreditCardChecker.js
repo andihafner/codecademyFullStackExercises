@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 /* ahCreditCardChecker.js, codecademy.com full-stack engineer career path exercise,
     andihafner.com 2022
     
     This code checks credit card numbers for their validity, based on the 
         --> https://en.wikipedia.org/wiki/Luhn_algorithm
     */
+=======
+/* ahCreditCardChecker.js, codecademy.com full-stack engineer career path exercise, ahc 2022 */
+>>>>>>> 0de74b0b84f59fadfacebe947738ea6d1da76c19
 
 // All valid credit card numbers
 const valid1 = [4, 5, 3, 9, 6, 7, 7, 9, 0, 8, 0, 1, 6, 8, 0, 8];
@@ -33,6 +37,10 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 // Add your functions below:
 
 /* The function 'validateCred()' implements the Luhn-Algorithm
+<<<<<<< HEAD
+=======
+    --> https://en.wikipedia.org/wiki/Luhn_algorithm
+>>>>>>> 0de74b0b84f59fadfacebe947738ea6d1da76c19
     It takes a card number an returns 'true' if it is a valid one.
     I developed the function from the German Wikipedia Description, which I found easier
     to understand, --> https://de.wikipedia.org/wiki/Luhn-Algorithmus
@@ -67,7 +75,11 @@ const validateCred = cardNumber => {
 
 //console.log(validateCred(valid1));
 
+<<<<<<< HEAD
  console.log(batch);
+=======
+// console.log(batch);
+>>>>>>> 0de74b0b84f59fadfacebe947738ea6d1da76c19
 
 batch.forEach((arr, index) => {
     console.log(index, validateCred(arr));
