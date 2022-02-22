@@ -35,7 +35,6 @@ const pAequorFactory = (specimenNum, dna) => {
             return dna;
         },
         compareDNA(specToCompare) {
-            //console.log(this.specimenNum, specToCompare.specimenNum);
             let equalBasesCount = 0;
             this.dna.forEach((base, index) => {
                 if (base === specToCompare.dna[index]) {
@@ -60,11 +59,17 @@ const pAequorFactory = (specimenNum, dna) => {
     };
 };
 
-let spec1 = pAequorFactory(1, mockUpStrand());
-let spec2 = pAequorFactory(2, mockUpStrand());
+const createSpecies = count => {
+    const population = [];
+    for (let i = 1; i <= count; i++) {
+        population.push(pAequorFactory(i,mockUpStrand()));
+    }
+    return population;
+};
 
-console.log(spec1, spec2);
+const population = createSpecies(3);
 
-//spec1.compareDNA(spec2);
+console.log(population);
 
-console.log(spec1.willLikelySurvive());
+// Exercise done, although there remain some additional challenges.
+// Perhaps another day, I'd like to go on with the course material...
