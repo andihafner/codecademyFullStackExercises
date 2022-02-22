@@ -1,7 +1,7 @@
 /* ahMysteriousOrganism.js, codecademy.com full-stack engineer career path exercise,
     andihafner.com 2022 
     
-    This code simulates the dna evolution of a simple deep sea organism...
+    This code simulates the DNA evolution of a simple organism...
 
     */
 
@@ -33,6 +33,16 @@ const pAequorFactory = (specimenNum, dna) => {
             }
             dna[pos] = newBase;
             return dna;
+        },
+        compareDNA(specToCompare) {
+            //console.log(this.specimenNum, specToCompare.specimenNum);
+            let equalBasesCount = 0;
+            this.dna.forEach((base, index) => {
+                if (base === specToCompare.dna[index]) {
+                    equalBasesCount += 1;
+                }
+            })
+            console.log(`Specimen #${this.specimenNum} and specimen #${specToCompare.specimenNum} have ${Math.floor(equalBasesCount / 15 * 100)}% DNA in common.`);
         }
     };
 };
@@ -46,3 +56,5 @@ let spec1 = pAequorFactory(1, mockUpStrand());
 let spec2 = pAequorFactory(2, mockUpStrand());
 
 console.log(spec1, spec2);
+
+spec1.compareDNA(spec2);
