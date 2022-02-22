@@ -5,5 +5,7 @@
 
 00_locally/
 
+*.pdf
+
 #  swap files
 *.sw*
