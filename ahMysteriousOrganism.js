@@ -43,18 +43,28 @@ const pAequorFactory = (specimenNum, dna) => {
                 }
             })
             console.log(`Specimen #${this.specimenNum} and specimen #${specToCompare.specimenNum} have ${Math.floor(equalBasesCount / 15 * 100)}% DNA in common.`);
+        },
+        willLikelySurvive() {
+            let basesOfCorGCount = 0;
+            this.dna.forEach(base => {
+                if (base === 'C' || base === 'G') {
+                    basesOfCorGCount += 1;
+                }
+            })
+            let ratio = Math.floor(basesOfCorGCount / 15 * 100);
+            if (ratio >= 60) {
+                return true
+            }
+            return false;
         }
     };
 };
-
-/*
-let dna1 = mockUpStrand();
-let dna2 = mockUpStrand();
- */
 
 let spec1 = pAequorFactory(1, mockUpStrand());
 let spec2 = pAequorFactory(2, mockUpStrand());
 
 console.log(spec1, spec2);
 
-spec1.compareDNA(spec2);
+//spec1.compareDNA(spec2);
+
+console.log(spec1.willLikelySurvive());
