@@ -91,8 +91,7 @@ let _ = {
         /* The findKey method returns the key of the first value which matches
             the predicateFunction (a function, which returns true of false).
 
-        Example for a predicateFunction:
-            function (value) { return value > 15; } */
+        Example for a predicateFunction: value => value > 15 */
 
         for (const [key, value] of Object.entries(object)) {
             if (predicateFunction(value)) {
@@ -113,11 +112,48 @@ let _ = {
 
         array.splice(0, deleteCount);
         return array;
+    },
+    dropWhile(array, predicate) {
 
+        /* The drop method drops elements from the beginning of an 
+            array until the predicate function returns falsy
+            
+           Example for a predicateFunction: value => value < 3 */
+
+        const dropNumber = array.findIndex((element, index) => {
+            return !(predicate(element, index, array))
+        });
+        const droppedArray = this.drop(array, dropNumber);
+        return droppedArray;
+    },
+    chunk(array, size) {
+
+        /* The chunk method Creates an array of elements split
+            into groups the length of size. */
+
+        const splittedArray = subArray = [];
+        let counter = -1;
+        let newElement;
+
+        for (let pos = 0; pos < array.length / size; pos++) {
+            subArray = [];
+            for (let subPos = 0; subPos < size; subPos++) {
+                counter++;
+                newElement = array[counter];
+                if (newElement != undefined) {
+                    subArray.push(newElement)
+                }
+            }
+            splittedArray.push(subArray);
+        }
+        return splittedArray;
     }
 };
 
+const array = [1, 2, 3, 4, 5, 6, 7];
+const size = 3;
 
+console.log(_.chunk(array, size));
 
 // Do not write or modify code below this line.
 module.exports = _;
