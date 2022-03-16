@@ -1,0 +1,26 @@
+/* style sheet for owPortfolio.html, ahc 2022 */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("https://content.codecademy.com/courses/learn-css-selectors-visual-rules/hypnotize_bg.png");
+}
+
+.header {
+    background-color: cornflowerblue;
+    text-align: center;
+}
+
+.about-me {
+    font-size: 20px;
+    opacity: 0.5;
+}
+
+.title {
+    font-weight: bold;
+}
+
+h1 {
+    color: azure;
+}
+
+
