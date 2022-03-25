@@ -30,3 +30,17 @@ h1 {
 #paint {
     background-color:skyblue;
 }
+
+figure {
+    margin-left: 0px;
+}
+
+figcaption {
+    font-size: larger;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+strong {
+    color:blue;
+}
