@@ -6,6 +6,7 @@
 00_locally/
 
 *.pdf
+*.ttf
 
 .**
 !.gitignore
