@@ -6,7 +6,9 @@
 00_locally/
 
 *.pdf
-*.ttf
+
+# *.ttf
+# (include fonts for lessons to be complete)
 
 .**
 !.gitignore
