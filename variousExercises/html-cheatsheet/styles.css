@@ -1,0 +1,47 @@
+/* cheatSheetExample style sheet
+    changed css colors
+    colors extracted with alwane.io from www.luator.de 
+    */
+
+body {
+  font-family: Arial, sans-serif;
+  color: #586e75;
+  background-color: gainsboro;
+  background-color: #fdf6e3;
+}
+
+h1 {
+  color: #009926;
+  text-align: center;
+}
+
+h2 {
+  color: rebeccapurple;
+  color: #b58900;
+  text-align: center;
+}
+
+table {
+  border: 2px solid darkorchid;
+  border: 2px solid #0086b3;
+  width: 650px;
+  margin: 0 auto;
+}
+
+thead {
+  color: #eee8d5;
+  background-color: plum;
+  background-color: #0086b3;
+}
+
+td {
+  border-top: 1px solid darkorchid;
+  border-top: 1px solid #0086b3;
+}
+
+.code {
+  font-family: monospace;
+  color: #eee8d5;
+  background-color: beige;
+  background-color: #cb4b16;
+}
