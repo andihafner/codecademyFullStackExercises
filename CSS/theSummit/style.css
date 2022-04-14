@@ -1,0 +1,48 @@
+/* Some styles slightly differ from the proposed solutions */
+
+a {
+    color: #2176FF;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    color: orange;
+}
+
+.nav-link {
+    text-decoration: none;
+}
+
+.nav-link:hover, .btn:hover, .activity:hover {
+    text-decoration: none;
+    color: orange;
+}
+
+.btn {
+    background-color: #2176FF;
+    border-radius: 5px;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn:active, .activity:active {
+    background-color:lightskyblue;
+    color: #fff;
+}
+
+.activity {
+    border: 1px solid #2176FF;
+    border-radius: 5px;
+    height: 2em;
+    width: 5.5em;
+} 
