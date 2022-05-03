@@ -22,11 +22,9 @@ header {
     border-bottom: 1px solid seashell;
 }
 
-.logo {
+.logo img {
     margin-left: 10px;
-    font-size: 50px;
-    font-family: 'Great Vibes';
-
+    height: 50px;
 }
 
 nav {
