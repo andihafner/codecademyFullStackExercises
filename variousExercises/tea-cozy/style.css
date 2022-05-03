@@ -2,6 +2,7 @@
 colors: https://matplotlib.org/3.1.1/gallery/color/named_colors.html
 css rules: https://en.wikipedia.org/wiki/CSS
 flex cheat sheet: https://flexbox.malven.co/
+flexbox guide: https://blog.webdevsimplified.com/2021-11/flexbox/
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
@@ -22,11 +23,9 @@ header {
     border-bottom: 1px solid seashell;
 }
 
-.logo {
+.logo img {
     margin-left: 10px;
-    font-size: 50px;
-    font-family: 'Great Vibes';
-
+    height: 50px;
 }
 
 nav {
