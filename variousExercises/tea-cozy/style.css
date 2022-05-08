@@ -28,10 +28,13 @@ header {
     height: 50px;
 }
 
-nav {
+a {
+    color: seashell;
+}
+
+.nav-list {
     display: flex;
     margin-right: 10px;
-    text-decoration: underline;
     gap: 1em;
 }
 
