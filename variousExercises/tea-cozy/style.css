@@ -24,7 +24,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
     color: seashell;
-    background-color: black;
+    /* background-color: black; /* Disable for visual hint */
     opacity: 0.9;
 }
 
@@ -72,11 +72,12 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: black;
+    /* background-color: black; /* Disable to show colorized boxes */
 }
 
 .section-footer {
     margin-bottom: 1em;
+    background-color:coral; /* Visual hint */
 }
 
 /* ---------- Section 'Our Mission ---------- */
@@ -103,15 +104,15 @@ header {
 
 .tea-of-month {
     display: flex;
-    justify-content: center;
-    width: 1000px;
+    background-color:antiquewhite;
 }
 
+.tea-of-month-1 {
+    display: flex;
+    background-color:aquamarine;
+}
 .tea-of-month img {
     width: 300px;
     height: 200px;
 }
 
-.tea-of-month-item {
-    display: flex;
-}
