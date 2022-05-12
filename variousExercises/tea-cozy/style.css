@@ -1,8 +1,21 @@
 /* 
-colors: https://matplotlib.org/3.1.1/gallery/color/named_colors.html
-css rules: https://en.wikipedia.org/wiki/CSS
-flex cheat sheet: https://flexbox.malven.co/
-flexbox guide: https://blog.webdevsimplified.com/2021-11/flexbox/
+    Tea Cozy - Exercise project from codecademy.com
+
+    Solved by andihafner.com 2022
+ 
+    Goals so far:
+
+    - Exercising the use of HTML and CSS in general and 
+        the flexbox model in particular.
+
+
+Used resources (among others):
+
+- colors: https://matplotlib.org/3.1.1/gallery/color/named_colors.html
+- css rules: https://en.wikipedia.org/wiki/CSS
+- flex cheat sheet: https://flexbox.malven.co/
+- flexbox guide: https://blog.webdevsimplified.com/2021-11/flexbox/
+
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
@@ -14,6 +27,23 @@ body {
     background-color: black;
     opacity: 0.9;
 }
+
+a {
+    color: seashell;
+}
+
+h2 {
+    font-size: 1.3em;
+    font-weight: 1000;
+    margin: 0.4em;
+}
+
+h4 {
+    font-weight: bold;
+    margin: 0.3em;
+}
+
+/* ---------- Header styles ---------- */
 
 header {
     height: 69px;
@@ -28,24 +58,33 @@ header {
     height: 50px;
 }
 
-a {
-    color: seashell;
-}
-
 .nav-list {
     display: flex;
     margin-right: 10px;
     flex-wrap: wrap;
-    /* The header height should be extended with media-query */
+    /* The header height should be extended by a media-query */
     gap: 1em;
 }
+
+/* ---------- Section styles ---------- */
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+}
+
+.section-footer {
+    margin-bottom: 1em;
+}
+
+/* ---------- Section 'Our Mission ---------- */
 
 .mission {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 700px;
-    /* background-color: moccasin; */
+    /* background-color: moccasin; /* Visual hint  */
 }
 
 .mission-item {
@@ -55,24 +94,24 @@ a {
     justify-content: center;
     height: 700px;
     width: 1200px;
-    background-color: turquoise;
+    background-color: turquoise; /* Just as visual hint,
+        overwritten by image element below */
     background-image: url("images/img-mission-background.jpg");
 }
 
-.mission-item-box {
+/* ---------- Section 'Tea of the Month' ---------- */
+
+.tea-of-month {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: black;
+    justify-content: center;
+    width: 1000px;
 }
 
-h2 {
-    font-size: 1.3em;
-    font-weight: 1000;
-    margin: 0.4em;
+.tea-of-month img {
+    width: 300px;
+    height: 200px;
 }
 
-h4 {
-    font-weight: bold;
-    margin: 0.3em;
+.tea-of-month-item {
+    display: flex;
 }
